@@ -1,4 +1,11 @@
 .classpath
 .project
 .settings
+!generated/myArtifact/.classpath
+!generated/myArtifact/.project
+!generated/myArtifact/.settings/
+!src/main/archetype/archetype-resources/.classpath
+!src/main/archetype/archetype-resources/.project
+!src/main/archetype/archetype-resources/.settings
+
 target

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><archetype>
   <id>ForPlay</id>
   <sources>
-    <source>src\main\java\client\__module__.java</source>
+    <source>src\main\java\core\__module__Game.java</source>
+    <source>src\main\java\core\AbstractPointerListener.java</source>
+    <source>src\main\java\core\Pea.java</source>
+    <source>src\main\java\html\__module__EntryPoint.java</source>
+    <source>src\main\java\java\__module__Main.java</source>
   </sources>
   <resources>
     <resource>src\main\webapp\WEB-INF\web.xml</resource>
     <resource>src\main\java\__module__.gwt.xml</resource>
+    <resource>src\main\java\resources\images\background.png</resource>
+    <resource>src\main\java\resources\images\pea.png</resource>
     <resource>.classpath</resource>
     <resource>.project</resource>
     <resource>.settings\.jsdtscope</resource>
