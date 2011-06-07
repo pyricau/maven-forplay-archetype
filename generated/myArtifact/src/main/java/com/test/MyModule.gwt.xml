@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='MyModule'>
+
+    <inherits name='com.google.gwt.user.User' />
+    <inherits name='com.google.gwt.user.theme.standard.Standard' />
+    <inherits name='forplay.ForPlay' />
+
+    <source path='html' />
+    <source path='core' />
+
+    <public path="resources" />
+
+    <entry-point class='com.test.html.MyModuleEntryPoint' />
+
+</module>
