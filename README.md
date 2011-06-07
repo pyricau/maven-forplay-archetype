@@ -14,14 +14,14 @@ mvn install
 ### Generate a new ForPlay project from the archetype
 
 ```bash
-mvn archetype:generate
-  -DarchetypeGroupId=info.piwai.forplay
-  -DarchetypeArtifactId=maven-forplay-archetype
-  -DarchetypeVersion=1.0
-  -DarchetypeRepository=https://github.com/pyricau/maven-forplay-archetype/raw/master/releases
-  -DgroupId=com.mycompany
-  -DartifactId=my-forplay-app
-  -Dmodule=MyAppModule
+mvn archetype:generate \
+  -DarchetypeGroupId=info.piwai.forplay \
+  -DarchetypeArtifactId=maven-forplay-archetype \
+  -DarchetypeVersion=1.0 \
+  -DarchetypeRepository=https://github.com/pyricau/maven-forplay-archetype/raw/master/releases \
+  -DgroupId=com.mycompany \
+  -DartifactId=my-forplay-app \
+  -Dmodule=MyAppModule \
   -Dversion=1.0-SNAPSHOT
 ```
 
