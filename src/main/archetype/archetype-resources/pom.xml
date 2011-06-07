@@ -10,14 +10,15 @@
     <artifactId>\${artifactId}</artifactId>
     <packaging>war</packaging>
     <version>\${version}</version>
-    <name>GWT Maven Archetype</name>
+    
+    <name>\${artifactId}</name>
+    
+    <description>A new ForPlay project</description>
 
     <properties>
         <!-- Convenience property to set the GWT version -->
-        <gwtVersion>2.1.0</gwtVersion>
-        <!-- GWT needs at least java 1.5 -->
-        <maven.compiler.source>1.5</maven.compiler.source>
-        <maven.compiler.target>1.5</maven.compiler.target>
+        <gwtVersion>${gwtVersion}</gwtVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <webappDirectory>\${project.build.directory}/\${project.build.finalName}</webappDirectory>
     </properties>
 
@@ -25,13 +26,13 @@
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
-            <version>${gwtVersion}</version>
+            <version>\${gwtVersion}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-user</artifactId>
-            <version>${gwtVersion}</version>
+            <version>\${gwtVersion}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -52,14 +53,12 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
-                <version>${project.version}</version>
+                <version>${mavenGwtPluginVersion}</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>compile</goal>
                             <goal>test</goal>
-                            <goal>i18n</goal>
-                            <goal>generateAsync</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -68,7 +67,6 @@
                 <configuration>
                     <runTarget>\${module}.html</runTarget>
                     <hostedWebapp>\${webappDirectory}</hostedWebapp>
-                    <i18nMessagesBundle>\${package}.client.Messages</i18nMessagesBundle>
                 </configuration>
             </plugin>
 
@@ -87,6 +85,14 @@
                 </executions>
                 <configuration>
                     <webappDirectory>\${webappDirectory}</webappDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
                 </configuration>
             </plugin>
 
