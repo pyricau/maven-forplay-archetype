@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>info.piwai.forplay</groupId>
+    <artifactId>maven-forplay-archetype</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Maven ForPlay Archetype</name>
+    <description>Maven archetype to get started with ForPlay</description>
+    <url>https://github.com/pyricau/maven-forplay-archetype</url>
+    <inceptionYear>2011</inceptionYear>
+
+    <prerequisites>
+        <maven>2.1</maven>
+    </prerequisites>
+
+    <licenses>
+        <license>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>Apache 2.0</name>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:pyricau/maven-forplay-archetype.git</connection>
+        <developerConnection>scm:git:git@github.com:pyricau/maven-forplay-archetype.git</developerConnection>
+        <url>https://github.com/pyricau/maven-forplay-archetype</url>
+    </scm>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/pyricau/maven-forplay-archetype/issuesT</url>
+    </issueManagement>
+
+    <properties>
+        <!-- apt filterting doesn't support dot -->
+        <gwtVersion>2.3.0</gwtVersion>
+        <mavenVersion>2.0.9</mavenVersion>
+    </properties>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/archetype</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+        </plugins>
+    </build>
+
+</project>
