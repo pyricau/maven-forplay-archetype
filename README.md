@@ -8,6 +8,7 @@ A Maven archetype to quickly get started with ForPlay. It generates a new Maven 
 
 ```bash
 svn checkout http://forplay.googlecode.com/svn/trunk/ forplay
+cd forplay
 mvn install
 ```
 
