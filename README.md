@@ -35,6 +35,6 @@ mvn package
 ### Import the project into Eclipse
 
 * Install the latest Eclipse with the latest Google plugin and the latest M2Eclipse plugin
-* In Eclipse : File > Import > Existing Projects into Workspace
+* In Eclipse : File > Import > General > Existing Projects into Workspace
 
 ### That's all, folks!
