@@ -24,3 +24,16 @@ mvn archetype:generate
   -Dmodule=MyAppModule
   -Dversion=1.0-SNAPSHOT
 ```
+
+### Check that it builds well with Maven
+
+```bash
+mvn package
+```
+
+### Import the project into Eclipse
+
+* Install the latest Eclipse with the latest Google plugin and the latest M2Eclipse plugin
+* In Eclipse : File > Import > Existing Projects into Workspace
+
+### That's all, folks!
