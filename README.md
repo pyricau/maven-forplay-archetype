@@ -37,4 +37,8 @@ mvn package
 * Install the latest Eclipse with the latest Google plugin and the latest M2Eclipse plugin
 * In Eclipse : File > Import > General > Existing Projects into Workspace
 
+### Run Forest, Run!
+
+To run the app with Java, right click on the **com.mycompany.java.MyAppModuleMain** class and hit *Run as > Java Application*
+
 ### That's all, folks!
