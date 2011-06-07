@@ -19,6 +19,11 @@
         <gwtVersion>2.3.0</gwtVersion>
         <mavenGwtPluginVersion>2.3.0</mavenGwtPluginVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--Trick to deploy releases (using mvn release:perform) to the local 
+            file system. The release is actually performed from target/checkout, which 
+            is why we need those ../../ . Notice that after deployment, you should commit 
+            and push to the git repository. -->
+        <altDeploymentRepository>release-repo::default::file:../../releases</altDeploymentRepository>
     </properties>
 
     <inceptionYear>2011</inceptionYear>
@@ -35,13 +40,12 @@
         </license>
     </licenses>
 
-
     <developers>
         <developer>
             <id>pyricau</id>
             <name>Pierre-Yves Ricau</name>
             <roles>
-                <role>Created 2H4U.</role>
+                <role>Created the archetype, based on the GWT Maven plugin archetype.</role>
             </roles>
             <url>http://cv.piwai.info</url>
             <organization>Excilys</organization>
@@ -59,6 +63,18 @@
         <system>github</system>
         <url>https://github.com/pyricau/maven-forplay-archetype/issuesT</url>
     </issueManagement>
+
+
+    <distributionManagement>
+        <repository>
+            <id>release-repo</id>
+            <url>https://github.com/pyricau/maven-forplay-archetype/raw/master/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>https://github.com/pyricau/maven-forplay-archetype/raw/master/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <resources>
@@ -87,5 +103,15 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>deploy-snapshot</id>
+            <properties>
+                <altDeploymentRepository>snapshot-repo::default::file:snapshots</altDeploymentRepository>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
