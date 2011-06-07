@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>info.piwai.forplay</groupId>
+    <artifactId>maven-forplay-archetype</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>Maven ForPlay Archetype</name>
+    <description>Maven archetype to get started with ForPlay</description>
+    <url>https://github.com/pyricau/maven-forplay-archetype</url>
+
+    <properties>
+        <!-- apt filterting doesn't support dot -->
+        <gwtVersion>2.3.0</gwtVersion>
+        <mavenGwtPluginVersion>2.3.0</mavenGwtPluginVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--Trick to deploy releases (using mvn release:perform) to the local 
+            file system. The release is actually performed from target/checkout, which 
+            is why we need those ../../ . Notice that after deployment, you should commit 
+            and push to the git repository. -->
+        <altDeploymentRepository>release-repo::default::file:../../releases</altDeploymentRepository>
+    </properties>
+
+    <inceptionYear>2011</inceptionYear>
+
+    <prerequisites>
+        <maven>2.1</maven>
+    </prerequisites>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <distribution>repo</distribution>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>pyricau</id>
+            <name>Pierre-Yves Ricau</name>
+            <roles>
+                <role>Created the archetype, based on the GWT Maven plugin archetype.</role>
+            </roles>
+            <url>http://cv.piwai.info</url>
+            <organization>Excilys</organization>
+            <organizationUrl>http://www.excilys.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:pyricau/maven-forplay-archetype.git</connection>
+        <developerConnection>scm:git:git@github.com:pyricau/maven-forplay-archetype.git</developerConnection>
+        <url>https://github.com/pyricau/maven-forplay-archetype</url>
+    </scm>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/pyricau/maven-forplay-archetype/issuesT</url>
+    </issueManagement>
+
+
+    <distributionManagement>
+        <repository>
+            <id>release-repo</id>
+            <url>https://github.com/pyricau/maven-forplay-archetype/raw/master/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>https://github.com/pyricau/maven-forplay-archetype/raw/master/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/archetype</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <escapeString>\</escapeString>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>deploy-snapshot</id>
+            <properties>
+                <altDeploymentRepository>snapshot-repo::default::file:snapshots</altDeploymentRepository>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>
