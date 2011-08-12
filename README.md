@@ -1,18 +1,18 @@
-# Maven ForPlay Archetype
+# Maven Play'N Archetype
 
-A Maven archetype to quickly get started with ForPlay. It generates a new Maven project that uses ForPlay and the GWT Maven Plugin, with the needed eclipse conf.
+A Maven archetype to quickly get started with Play'N. It generates a new Maven project that uses Play'N and the GWT Maven Plugin, with the needed eclipse conf.
 
 ## Steps
 
-### Install ForPlay in your local Maven repo
+### Install Play'N in your local Maven repo
 
 ```bash
-svn checkout http://forplay.googlecode.com/svn/trunk/ forplay
-cd forplay
+git clone https://code.google.com/p/playn
+cd playn
 mvn install
 ```
 
-### Generate a new ForPlay project from the archetype
+### Generate a new Play'N project from the archetype
 
 ```bash
 mvn archetype:generate \
